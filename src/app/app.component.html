@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="home">
+    <img
+      style="width: 40px; height: 40px;"
+      src="https://www.img.in.th/images/feb4539743859619ba2fbcae6fd640df.png"
+    />
+    CS CMU
+  </a>
+  <button
+    class="navbar-toggler collapsed"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    *ngIf="username != undefined && username != 'null'"
+    class="collapse navbar-collapse"
+    id="navbarNav"
+  >
+    <div class="container-fluid">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="booking">จองห้อง</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="user-booking">รายการจอง</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-fle">
+        <li class="nav-item">
+          <a style="color: white; margin-right: 10px;"><b>{{username}}</b></a>
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="margin-top: 10px;">
+  <router-outlet></router-outlet>
+</div>
